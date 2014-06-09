@@ -71,6 +71,7 @@ module System.EncapsulatedResources (
   -- $posixnotes
   resAsFileHandle,
   posixCompatExitFailure,
+  ResourcesPosixSettings (..),
 
   -- * Useful re-exports
   def,
@@ -241,7 +242,7 @@ tryRmDirRec :: FilePath -> IO ()
 tryRmDirRec dir = System.IO.Error.catchIOError (removeDirectoryRecursive dir) (\_ -> return ()) -- (Just ignore errors)
 
 -- | Delete (forcibly deallocate) a Resource.
-destroyRes :: ResourceM ()
+destroyRes :: ResourceM a
 destroyRes = throw DestroyResourceException
 
 -- | Destroy a child of the current resource.

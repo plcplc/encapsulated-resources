@@ -51,7 +51,7 @@ test-suite unittest
 
   Other-Modules:
     Runner
-    System.EncapsulatedResources.Test.EncapsulatedResources,
+    System.EncapsulatedResources.Test.EncapsulatedResources
     System.EncapsulatedResources.Test.Unit.EncapsulatedResources
 
   hs-source-dirs: test
